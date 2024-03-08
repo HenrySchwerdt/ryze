@@ -1,13 +1,10 @@
-#include "terminal/terminal.hpp"
+#include "core/terminal/terminal.hpp"
 
 #include <iostream>
 
 int main() {
-    Terminal terminal;
-    terminal.clearScreen();
-    Input input;
-    while((input = terminal.waitForInput()).raw != 'q') {
-        std::cout << input.raw;
-    }
+    terminal::Color c = terminal::Color::FromHex("#ff0000");
+
+  
     return 0;
 }

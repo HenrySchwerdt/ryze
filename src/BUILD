@@ -4,6 +4,6 @@ cc_binary(
         ":main.cpp"
     ],
     deps = [
-        "//src/terminal:terminal",
+        "//src/core/terminal:terminal",
     ],
 )

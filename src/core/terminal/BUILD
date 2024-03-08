@@ -2,10 +2,11 @@ cc_library(
     name = "terminal",
     deps = [],
     srcs = [
-        ":terminal.cpp",
+        ":color.cpp",
     ],
     hdrs = [
-        ":terminal.hpp"
+        ":terminal.hpp",
+        ":color.hpp",
     ],
     visibility = ["//visibility:public"],
 )
