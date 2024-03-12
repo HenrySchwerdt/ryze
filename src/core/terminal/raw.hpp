@@ -21,10 +21,10 @@ namespace terminal
             static std::tuple<uint16_t, uint16_t> GetSize();
             void ClearScreen();
             void ClearLine();
-            void SetCursorPos(uint16_t x, uint16_t y);
-            void HideCursor();
+            static void SetCursorPos(uint16_t x, uint16_t y);
+            static void HideCursor();
             RawTerminal();
-            void ShowCursor();
+            static void ShowCursor();
             char WaitForInput();
             ~RawTerminal();
     };

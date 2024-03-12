@@ -5,5 +5,8 @@ cc_binary(
     ],
     deps = [
         "//src/core/terminal:terminal",
+        "//src/core/editor:editor",
+        "//src/core/ui:ui",
+        "//src/core/theme:theme",
     ],
 )

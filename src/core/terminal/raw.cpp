@@ -19,8 +19,8 @@ namespace terminal
         newTermios.c_lflag &= ~(ECHO | ICANON | IEXTEN | ISIG);
         newTermios.c_cc[VMIN] = 0;
         newTermios.c_cc[VTIME] = 1;
-        fcntl(STDIN_FILENO, F_SETFL, O_NONBLOCK);
         tcsetattr(STDIN_FILENO, TCSAFLUSH, &newTermios);
+        // fcntl(STDIN_FILENO, F_SETFL, O_NONBLOCK);
         initialized = true;
     }
 

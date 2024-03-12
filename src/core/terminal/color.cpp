@@ -2,12 +2,12 @@
 
 namespace terminal
 {
-    std::string Color::ToFgAnsi()
+    std::string Color::ToFgAnsi() const
     {
         return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m";
     }
 
-    std::string Color::ToBgAnsi()
+    std::string Color::ToBgAnsi() const
     {
         return "\033[48;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m";
     }
@@ -24,6 +24,7 @@ namespace terminal
         return Color(r, g, b);
     }
 
+    
     Color Color::FromRgb(unsigned char r, unsigned char g, unsigned char b)
     {
         return Color(r, g, b);
