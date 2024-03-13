@@ -4,8 +4,8 @@ namespace editor
 {
     Cursor::Cursor()
     {
-        this->x = 0;
-        this->y = 0;
+        this->x = 1;
+        this->y = 1;
         this->mode = Mode::BLOCK;
     }
 
@@ -80,7 +80,7 @@ namespace editor
     }
 
     void Cursor::Zero() {
-        terminal::RawTerminal::SetCursorPos(0, 0);
+        terminal::RawTerminal::SetCursorPos(1, 1);
     }
 
     void Cursor::SilentMove(int x, int y)

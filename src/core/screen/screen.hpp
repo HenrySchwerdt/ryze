@@ -8,13 +8,13 @@
 namespace screen {
     class Cell {
     private:
-        char character;
+        std::string character;
         terminal::Color fg_color;
         terminal::Color bg_color;
 
     public:
-        Cell(char character, terminal::Color fg_color, terminal::Color bg_color) : character(character), fg_color(fg_color), bg_color(bg_color) {};
-        char GetCharacter() const;
+        Cell(std::string character, terminal::Color fg_color, terminal::Color bg_color) : character(character), fg_color(fg_color), bg_color(bg_color) {};
+        std::string GetCharacter() const;
         terminal::Color GetFgColor() const;
         terminal::Color GetBgColor() const;
         void Print() const;

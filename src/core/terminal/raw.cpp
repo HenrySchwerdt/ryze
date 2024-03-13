@@ -20,7 +20,6 @@ namespace terminal
         newTermios.c_cc[VMIN] = 0;
         newTermios.c_cc[VTIME] = 1;
         tcsetattr(STDIN_FILENO, TCSAFLUSH, &newTermios);
-        // fcntl(STDIN_FILENO, F_SETFL, O_NONBLOCK);
         initialized = true;
     }
 
@@ -34,6 +33,7 @@ namespace terminal
 
     void RawTerminal::ClearScreen()
     {
+        std::cout << "\033]1337;ClearScrollback\007";
         std::cout << "\033[2J" << std::flush;
     }
 

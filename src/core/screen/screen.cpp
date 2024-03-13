@@ -13,7 +13,7 @@ namespace screen
         return fg_color;
     }
 
-    char Cell::GetCharacter() const
+    std::string Cell::GetCharacter() const
     {
         return character;
     }
@@ -32,7 +32,7 @@ namespace screen
     {
         this->width = width;
         this->height = height;
-        buffer.resize(height * width, Cell(' ', WHITE, YELLOW));
+        buffer.resize(height * width, Cell(" ", WHITE, YELLOW));
     }
 
     ScreenBuffer::~ScreenBuffer()
@@ -49,7 +49,7 @@ namespace screen
 
     void ScreenBuffer::Draw() const
     {
-
+        terminal::RawTerminal::SetCursorPos(1,1);
         for (int y = 0; y < height; y++)
         {
             std::string line;
@@ -75,6 +75,7 @@ namespace screen
                 line += "\r\n";
             std::cout << line;
         }
+       
     }
 
     const Cell &ScreenBuffer::GetCell(int x, int y)

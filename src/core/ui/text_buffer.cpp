@@ -20,10 +20,10 @@ namespace ui {
         for (int y = this->y_start; y < this->y_end; y++) {
             for (int x = this->x_start; x < this->x_end; x++) {
                 if (x == this->x_start) {
-                    buffer->SetCell(x, y, screen::Cell('~', theme->color1, theme->background));
+                    buffer->SetCell(x, y, screen::Cell("~", theme->color1, theme->background));
                     continue;
                 }
-                buffer->SetCell(x, y, screen::Cell(' ', theme->foreground, theme->background));
+                buffer->SetCell(x, y, screen::Cell(" ", theme->foreground, theme->background));
             }
         }
     }

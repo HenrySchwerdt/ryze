@@ -124,11 +124,11 @@ namespace editor
     void Editor::Run()
     {
         const auto [x, y] = this->terminal->GetSize();
-        std::cout << "\033]1337;ClearScrollback\007";
+        
         screen::ScreenBuffer buffer = screen::ScreenBuffer(x, y);
-        this->cursor->SetXRanges(0, x);
-        this->cursor->SetYRanges(0, y - 2);
-        this->cursor->MoveTo(0, 0);
+        this->cursor->SetXRanges(1, x);
+        this->cursor->SetYRanges(1, y - 2);
+        this->cursor->MoveTo(1, 1);
         while (1)
         {
             this->cursor->Hide();
@@ -144,6 +144,7 @@ namespace editor
 
             this->command_bar->SetCommandBuffer(*command_buffer);
             this->status_bar->SetMode(toString(this->mode));
+            this->status_bar->SetFilePos(1, 1);
 
             this->text_buffer->Draw(&buffer, editor_theme);
             this->status_bar->Draw(&buffer, editor_theme);

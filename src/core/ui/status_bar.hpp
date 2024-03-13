@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include "../terminal/terminal.hpp"
+#include "shapes.hpp"
 #include "../screen/screen.hpp"
 #include "../theme/theme.hpp"
 namespace ui

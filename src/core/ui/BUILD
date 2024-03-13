@@ -9,6 +9,7 @@ cc_library(
         ":status_bar.hpp",
         ":command_bar.hpp",
         ":text_buffer.hpp",
+        ":shapes.hpp",
         ":ui.hpp",
     ],
     visibility = ["//visibility:public"],
